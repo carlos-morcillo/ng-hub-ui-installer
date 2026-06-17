@@ -1,0 +1,11 @@
+{
+	"$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+	"schematics": {
+		"ng-add": {
+			"description": "Installs selected ng-hub-ui libraries.",
+			"factory": "./ng-add/index#ngAdd",
+			"schema": "./ng-add/schema.json"
+		}
+	}
+}
+

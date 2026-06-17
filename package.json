@@ -1,0 +1,31 @@
+{
+	"name": "ng-hub-ui",
+	"version": "0.0.0",
+	"description": "Interactive ng add installer for the ng-hub-ui Angular library family.",
+	"author": "Carlos Morcillo <carlos.morcillo@me.com> (https://www.carlosmorcillo.com)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/carlosmorcillo/ng-hub-ui.git"
+	},
+	"homepage": "https://hubui.dev/",
+	"keywords": ["angular", "ng-add", "schematics", "ui-components", "ng-hub-ui"],
+	"schematics": "./schematics/collection.json",
+	"files": [
+		"schematics/collection.json",
+		"schematics/ng-add/index.js",
+		"schematics/ng-add/library-packages.js",
+		"schematics/ng-add/models.js",
+		"schematics/ng-add/normalize-libraries.js",
+		"schematics/ng-add/package-json.js",
+		"schematics/ng-add/resolve-dependency-entries.js",
+		"schematics/ng-add/schema.json"
+	],
+	"peerDependencies": {
+		"@angular/common": ">=17.3.0",
+		"@angular/core": ">=17.3.0"
+	},
+	"dependencies": {
+		"@angular-devkit/schematics": "^22.0.0"
+	},
+	"sideEffects": false
+}

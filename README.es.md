@@ -1,0 +1,203 @@
+# ng-hub-ui
+
+**Español** | [English](./README.md)
+
+El instalador oficial y punto de entrada de la familia de bibliotecas de componentes Angular **ng-hub-ui**. Ejecuta un único comando `ng add ng-hub-ui`, elige las bibliotecas que necesitas y deja que el schematic conecte las dependencias en tu proyecto.
+
+> Este es el paquete instalador paraguas. No incluye componentes de UI por sí mismo: instala en tu aplicación las bibliotecas individuales `ng-hub-ui-*` que se listan más abajo.
+
+## Documentación y ejemplos en vivo
+
+Este paquete forma parte de [Hub UI](https://hubui.dev/), una colección de bibliotecas de componentes Angular para aplicaciones standalone.
+
+- Documentación: https://hubui.dev/
+- Ejemplos en vivo: https://hubui.dev/
+
+## 🧩 Familia de bibliotecas `ng-hub-ui`
+
+`ng-hub-ui` es el instalador de la familia. Estas son las bibliotecas que componen el ecosistema:
+
+- [**ng-hub-ui-accordion**](https://www.npmjs.com/package/ng-hub-ui-accordion) — _obsoleta, usa [ng-hub-ui-panels](https://www.npmjs.com/package/ng-hub-ui-panels)_
+- [**ng-hub-ui-action-sheet**](https://www.npmjs.com/package/ng-hub-ui-action-sheet)
+- [**ng-hub-ui-avatar**](https://www.npmjs.com/package/ng-hub-ui-avatar)
+- [**ng-hub-ui-board**](https://www.npmjs.com/package/ng-hub-ui-board)
+- [**ng-hub-ui-breadcrumbs**](https://www.npmjs.com/package/ng-hub-ui-breadcrumbs)
+- [**ng-hub-ui-calendar**](https://www.npmjs.com/package/ng-hub-ui-calendar)
+- [**ng-hub-ui-dropdown**](https://www.npmjs.com/package/ng-hub-ui-dropdown)
+- [**ng-hub-ui-ds**](https://www.npmjs.com/package/ng-hub-ui-ds)
+- [**ng-hub-ui-forms**](https://www.npmjs.com/package/ng-hub-ui-forms)
+- [**ng-hub-ui-history**](https://www.npmjs.com/package/ng-hub-ui-history)
+- [**ng-hub-ui-milestones**](https://www.npmjs.com/package/ng-hub-ui-milestones)
+- [**ng-hub-ui-modal**](https://www.npmjs.com/package/ng-hub-ui-modal)
+- [**ng-hub-ui-nav**](https://www.npmjs.com/package/ng-hub-ui-nav)
+- [**ng-hub-ui-paginable**](https://www.npmjs.com/package/ng-hub-ui-paginable)
+- [**ng-hub-ui-panels**](https://www.npmjs.com/package/ng-hub-ui-panels)
+- [**ng-hub-ui-portal**](https://www.npmjs.com/package/ng-hub-ui-portal)
+- [**ng-hub-ui-skeleton**](https://www.npmjs.com/package/ng-hub-ui-skeleton)
+- [**ng-hub-ui-sortable**](https://www.npmjs.com/package/ng-hub-ui-sortable)
+- [**ng-hub-ui-stepper**](https://www.npmjs.com/package/ng-hub-ui-stepper)
+- [**ng-hub-ui-utils**](https://www.npmjs.com/package/ng-hub-ui-utils)
+
+---
+
+## 📋 Tabla de contenidos
+
+- [🚀 Instalación](#-instalación)
+- [⚙️ Uso](#️-uso)
+- [🛠️ Qué hace el schematic](#️-qué-hace-el-schematic)
+- [🎛️ Opciones](#️-opciones)
+- [📦 Bibliotecas instalables](#-bibliotecas-instalables)
+- [✋ Instalación manual](#-instalación-manual)
+- [🤝 Contribución](#-contribución)
+- [☕ Apoyo](#-apoyo)
+- [📄 Licencia](#-licencia)
+
+---
+
+## 🚀 Instalación
+
+La forma recomendada de añadir ng-hub-ui a tu proyecto Angular es el comando `ng add` de la CLI de Angular, que ejecuta el schematic instalador de forma interactiva:
+
+```bash
+ng add ng-hub-ui
+```
+
+La CLI de Angular descarga el paquete `ng-hub-ui` y ejecuta su schematic `ng-add`.
+
+## ⚙️ Uso
+
+### Interactivo
+
+Ejecutar el comando sin argumentos lanza un prompt de selección múltiple:
+
+```bash
+ng add ng-hub-ui
+```
+
+```
+? Which ng-hub-ui libraries do you want to install? (Press <space> to select, <a> to toggle all, <i> to invert selection)
+ ◯ Accordion
+ ◯ Action Sheet
+ ◯ Avatar
+ ◯ Board
+ ◯ Breadcrumbs
+ ◯ Calendar
+ ◯ Dropdown
+ ◯ History
+ ◯ Modal
+ ◯ Nav
+ ◯ Paginable
+ ◯ Portal
+ ◯ Skeleton
+ ◯ Sortable
+ ◯ Stepper
+ ◯ Utils
+```
+
+Selecciona una o varias bibliotecas con la barra espaciadora y confirma. El schematic resuelve los paquetes npm correspondientes (más las dependencias necesarias), los añade a tu `package.json` y los instala.
+
+### No interactivo
+
+Puedes omitir el prompt pasando las bibliotecas directamente. Usa los identificadores cortos que se muestran en el prompt (la parte antes de la etiqueta), separados por comas o repitiendo el flag:
+
+```bash
+# Separados por comas
+ng add ng-hub-ui --libraries=modal,paginable,utils
+
+# Flag repetido
+ng add ng-hub-ui --libraries=calendar --libraries=stepper
+```
+
+Para actualizar `package.json` sin lanzar la instalación del gestor de paquetes:
+
+```bash
+ng add ng-hub-ui --libraries=modal --skip-install
+```
+
+## 🛠️ Qué hace el schematic
+
+El schematic `ng-add` realiza exactamente los siguientes pasos:
+
+1. **Normaliza la selección.** Acepta las bibliotecas elegidas en el prompt o pasadas por flags (array o cadena separada por comas), elimina duplicados y falla con un error claro si la selección está vacía o contiene un identificador de biblioteca desconocido.
+2. **Resuelve las dependencias.** Cada biblioteca seleccionada se mapea a su paquete npm y rango de versión. Las dependencias requeridas se incorporan automáticamente:
+    - `calendar` instala además `ng-hub-ui-utils`.
+    - `sortable` instala además el paquete externo `sortablejs`.
+3. **Actualiza `package.json`.** Los paquetes resueltos se añaden a la sección `dependencies` del `package.json` raíz de tu proyecto. Las entradas existentes se respetan (el schematic nunca sobrescribe una versión que ya tengas fijada).
+4. **Instala los paquetes.** A menos que se indique `--skip-install`, programa una tarea de instalación para que tu gestor de paquetes (npm/yarn/pnpm, según detecte la CLI de Angular) descargue las nuevas dependencias.
+5. **Registra el resultado**, listando las bibliotecas que se han instalado.
+
+> **Nota sobre el alcance:** La función del instalador es únicamente conectar dependencias. **No** modifica `angular.json`, no importa providers, no registra componentes ni añade entradas de hojas de estilo. Tras la instalación, importa y configura cada biblioteca en tu aplicación siguiendo su propio README (enlazado más arriba).
+
+## 🎛️ Opciones
+
+| Opción           | Tipo       | Por defecto | Descripción                                                                                                  |
+| ---------------- | ---------- | ----------- | ------------------------------------------------------------------------------------------------------------ |
+| `--libraries`    | `string[]` | —           | **Obligatorio.** Identificadores de bibliotecas a instalar. Vía prompt, separados por comas o repetidos.     |
+| `--skip-install` | `boolean`  | `false`     | Actualiza solo `package.json`; omite el paso de instalación del gestor de paquetes.                          |
+
+## 📦 Bibliotecas instalables
+
+El schematic puede instalar las siguientes bibliotecas. El identificador de la izquierda es lo que pasas a `--libraries`; los paquetes transitivos se añaden automáticamente.
+
+| Identificador  | Paquete npm                                                                       | Dependencias añadidas automáticamente |
+| -------------- | --------------------------------------------------------------------------------- | ------------------------------------- |
+| `accordion`    | [ng-hub-ui-accordion](https://www.npmjs.com/package/ng-hub-ui-accordion)          | —                                     |
+| `action-sheet` | [ng-hub-ui-action-sheet](https://www.npmjs.com/package/ng-hub-ui-action-sheet)    | —                                     |
+| `avatar`       | [ng-hub-ui-avatar](https://www.npmjs.com/package/ng-hub-ui-avatar)                | —                                     |
+| `board`        | [ng-hub-ui-board](https://www.npmjs.com/package/ng-hub-ui-board)                  | —                                     |
+| `breadcrumbs`  | [ng-hub-ui-breadcrumbs](https://www.npmjs.com/package/ng-hub-ui-breadcrumbs)      | —                                     |
+| `calendar`     | [ng-hub-ui-calendar](https://www.npmjs.com/package/ng-hub-ui-calendar)            | `ng-hub-ui-utils`                     |
+| `dropdown`     | [ng-hub-ui-dropdown](https://www.npmjs.com/package/ng-hub-ui-dropdown)            | —                                     |
+| `history`      | [ng-hub-ui-history](https://www.npmjs.com/package/ng-hub-ui-history)              | —                                     |
+| `modal`        | [ng-hub-ui-modal](https://www.npmjs.com/package/ng-hub-ui-modal)                  | —                                     |
+| `nav`          | [ng-hub-ui-nav](https://www.npmjs.com/package/ng-hub-ui-nav)                      | —                                     |
+| `paginable`    | [ng-hub-ui-paginable](https://www.npmjs.com/package/ng-hub-ui-paginable)          | —                                     |
+| `portal`       | [ng-hub-ui-portal](https://www.npmjs.com/package/ng-hub-ui-portal)                | —                                     |
+| `skeleton`     | [ng-hub-ui-skeleton](https://www.npmjs.com/package/ng-hub-ui-skeleton)            | —                                     |
+| `sortable`     | [ng-hub-ui-sortable](https://www.npmjs.com/package/ng-hub-ui-sortable)            | `sortablejs`                          |
+| `stepper`      | [ng-hub-ui-stepper](https://www.npmjs.com/package/ng-hub-ui-stepper)              | —                                     |
+| `utils`        | [ng-hub-ui-utils](https://www.npmjs.com/package/ng-hub-ui-utils)                  | —                                     |
+
+> Otros paquetes de la familia —como [`ng-hub-ui-panels`](https://www.npmjs.com/package/ng-hub-ui-panels), [`ng-hub-ui-ds`](https://www.npmjs.com/package/ng-hub-ui-ds), [`ng-hub-ui-forms`](https://www.npmjs.com/package/ng-hub-ui-forms) y [`ng-hub-ui-milestones`](https://www.npmjs.com/package/ng-hub-ui-milestones)— forman parte del ecosistema pero todavía no están integrados en el instalador. Instálalos manualmente (ver más abajo).
+
+## ✋ Instalación manual
+
+Si prefieres no usar el schematic, instala cualquier biblioteca directamente con tu gestor de paquetes:
+
+```bash
+npm install ng-hub-ui-modal ng-hub-ui-paginable
+```
+
+Después importa y configura cada biblioteca siguiendo su propio README, enlazado en la sección [Familia de bibliotecas](#-familia-de-bibliotecas-ng-hub-ui). Recuerda que algunas bibliotecas tienen dependencias adicionales (por ejemplo, `ng-hub-ui-calendar` depende de `ng-hub-ui-utils`, y `ng-hub-ui-sortable` depende de `sortablejs`).
+
+## 🤝 Contribución
+
+¡Toda contribución es bienvenida! Así puedes ayudar:
+
+```bash
+# Clona el repositorio
+git clone https://github.com/carlos-morcillo/ng-hub-ui.git
+cd ng-hub-ui
+
+# Instala las dependencias
+npm install
+```
+
+1. **Haz un fork** del repositorio
+2. **Crea** una rama de feature: `git checkout -b feature/amazing-feature`
+3. **Haz commit** de tus cambios: `git commit -m 'Add amazing feature'`
+4. **Haz push** a tu rama: `git push origin feature/amazing-feature`
+5. **Abre** un pull request
+
+¿Has encontrado un error o tienes una petición? Abre una incidencia: https://github.com/carlos-morcillo/ng-hub-ui/issues
+
+## ☕ Apoyo
+
+¿Te gusta este proyecto? Puedes apoyarnos invitándonos a un café ☕:
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/carlosmorcillo)
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+MIT © ng-hub-ui contributors

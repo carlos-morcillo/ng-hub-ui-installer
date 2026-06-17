@@ -1,0 +1,7 @@
+# Angular schematic build artifacts
+schematics/**/*.js
+schematics/**/*.js.map
+schematics/**/*.d.ts
+schematics/**/*.d.ts.map
+schematics/**/*.metadata.json
+

@@ -1,0 +1,63 @@
+{
+	"$schema": "http://json-schema.org/schema",
+	"$id": "NgHubUiNgAddSchema",
+	"title": "ng-hub-ui ng-add options",
+	"type": "object",
+	"properties": {
+		"libraries": {
+			"type": "array",
+			"description": "ng-hub-ui libraries to install.",
+			"items": {
+				"type": "string",
+				"enum": [
+					"accordion",
+					"action-sheet",
+					"avatar",
+					"board",
+					"breadcrumbs",
+					"calendar",
+					"dropdown",
+					"history",
+					"modal",
+					"nav",
+					"paginable",
+					"portal",
+					"skeleton",
+					"sortable",
+					"stepper",
+					"utils"
+				]
+			},
+			"x-prompt": {
+				"message": "Which ng-hub-ui libraries do you want to install?",
+				"type": "list",
+				"multiselect": true,
+				"items": [
+					{ "value": "accordion", "label": "Accordion" },
+					{ "value": "action-sheet", "label": "Action Sheet" },
+					{ "value": "avatar", "label": "Avatar" },
+					{ "value": "board", "label": "Board" },
+					{ "value": "breadcrumbs", "label": "Breadcrumbs" },
+					{ "value": "calendar", "label": "Calendar" },
+					{ "value": "dropdown", "label": "Dropdown" },
+					{ "value": "history", "label": "History" },
+					{ "value": "modal", "label": "Modal" },
+					{ "value": "nav", "label": "Nav" },
+					{ "value": "paginable", "label": "Paginable" },
+					{ "value": "portal", "label": "Portal" },
+					{ "value": "skeleton", "label": "Skeleton" },
+					{ "value": "sortable", "label": "Sortable" },
+					{ "value": "stepper", "label": "Stepper" },
+					{ "value": "utils", "label": "Utils" }
+				]
+			}
+		},
+		"skipInstall": {
+			"type": "boolean",
+			"description": "Skip package manager installation after package.json is updated.",
+			"default": false
+		}
+	},
+	"required": ["libraries"]
+}
+
