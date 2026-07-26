@@ -2,30 +2,77 @@ import type { PackageMetadata } from './models';
 
 /**
  * Central package catalogue used by prompts, validation, and dependency resolution.
+ *
+ * Keep every entry aligned with the latest published version of each library
+ * (`projects/<lib>/package.json` in the monorepo). Libraries whose runtime peer
+ * depends on another ng-hub-ui package declare it in `dependencies` so `ng add`
+ * co-installs it.
  */
 export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
-	accordion: { packageName: 'ng-hub-ui-accordion', version: '^21.1.1' },
-	'action-sheet': { packageName: 'ng-hub-ui-action-sheet', version: '^0.0.1' },
-	avatar: { packageName: 'ng-hub-ui-avatar', version: '^21.1.0' },
-	board: { packageName: 'ng-hub-ui-board', version: '^21.1.1' },
-	breadcrumbs: { packageName: 'ng-hub-ui-breadcrumbs', version: '^21.1.0' },
-	calendar: {
-		packageName: 'ng-hub-ui-calendar',
-		version: '^21.1.1',
+	avatar: { packageName: 'ng-hub-ui-avatar', version: '^22.7.0' },
+	badges: {
+		packageName: 'ng-hub-ui-badges',
+		version: '^22.6.0',
 		dependencies: ['utils']
 	},
-	dropdown: { packageName: 'ng-hub-ui-dropdown', version: '^0.0.1' },
-	history: { packageName: 'ng-hub-ui-history', version: '^0.1.0' },
-	modal: { packageName: 'ng-hub-ui-modal', version: '^21.0.2' },
-	nav: { packageName: 'ng-hub-ui-nav', version: '^21.1.1' },
-	paginable: { packageName: 'ng-hub-ui-paginable', version: '^21.3.0' },
-	portal: { packageName: 'ng-hub-ui-portal', version: '^0.3.3' },
-	skeleton: { packageName: 'ng-hub-ui-skeleton', version: '^0.1.0' },
+	board: {
+		packageName: 'ng-hub-ui-board',
+		version: '^22.3.0',
+		dependencies: ['utils']
+	},
+	breadcrumbs: { packageName: 'ng-hub-ui-breadcrumbs', version: '^22.4.0' },
+	buttons: {
+		packageName: 'ng-hub-ui-buttons',
+		version: '^22.9.0',
+		dependencies: ['utils']
+	},
+	calendar: {
+		packageName: 'ng-hub-ui-calendar',
+		version: '^22.4.0',
+		dependencies: ['utils']
+	},
+	ds: { packageName: 'ng-hub-ui-ds', version: '^22.6.1' },
+	forms: { packageName: 'ng-hub-ui-forms', version: '^22.8.0' },
+	history: { packageName: 'ng-hub-ui-history', version: '^22.0.0' },
+	icons: { packageName: 'ng-hub-ui-icons', version: '^22.1.0' },
+	metrics: { packageName: 'ng-hub-ui-metrics', version: '^22.1.0' },
+	milestones: { packageName: 'ng-hub-ui-milestones', version: '^22.2.0' },
+	modal: {
+		packageName: 'ng-hub-ui-modal',
+		version: '^22.4.1',
+		dependencies: ['utils']
+	},
+	nav: {
+		packageName: 'ng-hub-ui-nav',
+		version: '^22.7.0',
+		dependencies: ['utils']
+	},
+	paginable: {
+		packageName: 'ng-hub-ui-paginable',
+		version: '^22.6.0',
+		dependencies: ['utils']
+	},
+	panels: {
+		packageName: 'ng-hub-ui-panels',
+		version: '^22.8.2',
+		dependencies: ['ds']
+	},
+	portal: {
+		packageName: 'ng-hub-ui-portal',
+		version: '^22.0.1',
+		dependencies: ['utils']
+	},
+	skeleton: { packageName: 'ng-hub-ui-skeleton', version: '^22.2.0' },
 	sortable: {
 		packageName: 'ng-hub-ui-sortable',
-		version: '^21.3.0',
+		version: '^22.1.0',
 		externalDependencies: [{ packageName: 'sortablejs', version: '^1.15.7' }]
 	},
-	stepper: { packageName: 'ng-hub-ui-stepper', version: '^21.2.0' },
-	utils: { packageName: 'ng-hub-ui-utils', version: '^1.2.1' }
+	stepper: {
+		packageName: 'ng-hub-ui-stepper',
+		version: '^22.5.0',
+		dependencies: ['utils']
+	},
+	toast: { packageName: 'ng-hub-ui-toast', version: '^22.5.1' },
+	utils: { packageName: 'ng-hub-ui-utils', version: '^22.7.0' }
 };

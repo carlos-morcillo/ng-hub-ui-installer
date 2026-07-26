@@ -5,3 +5,4 @@ schematics/**/*.d.ts
 schematics/**/*.d.ts.map
 schematics/**/*.metadata.json
 
+.DS_Store
