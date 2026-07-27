@@ -19,14 +19,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Catalogue entries for the eight libraries missing from the installer: `badges`,
+- Catalogue entries for the nine libraries missing from the installer: `badges`,
   `buttons`, `ds`, `forms`, `icons`, `metrics`, `milestones`, `panels`, `toast`.
 
 ### Removed
 
-- `accordion` (superseded by `ng-hub-ui-panels`; the npm package is deprecated) and
+- `accordion` (superseded by `ng-hub-ui-panels`; the npm package is deprecated),
   `dropdown` (never existed as a standalone package — the dropdown lives in
-  `ng-hub-ui-buttons`).
+  `ng-hub-ui-buttons`), `action-sheet` (pre-release scaffold, not yet a real
+  library) and `history` (`ng-hub-ui-history` has never been published to npm —
+  offering it made `npm install` fail with a 404; it returns once published).
 
 ### Fixed
 

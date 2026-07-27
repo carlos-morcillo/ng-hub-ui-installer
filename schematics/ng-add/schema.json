@@ -10,21 +10,26 @@
 			"items": {
 				"type": "string",
 				"enum": [
-					"accordion",
-					"action-sheet",
 					"avatar",
+					"badges",
 					"board",
 					"breadcrumbs",
+					"buttons",
 					"calendar",
-					"dropdown",
-					"history",
+					"ds",
+					"forms",
+					"icons",
+					"metrics",
+					"milestones",
 					"modal",
 					"nav",
 					"paginable",
+					"panels",
 					"portal",
 					"skeleton",
 					"sortable",
 					"stepper",
+					"toast",
 					"utils"
 				]
 			},
@@ -33,21 +38,26 @@
 				"type": "list",
 				"multiselect": true,
 				"items": [
-					{ "value": "accordion", "label": "Accordion" },
-					{ "value": "action-sheet", "label": "Action Sheet" },
 					{ "value": "avatar", "label": "Avatar" },
-					{ "value": "board", "label": "Board" },
+					{ "value": "badges", "label": "Badges & Chips" },
+					{ "value": "board", "label": "Board (Kanban)" },
 					{ "value": "breadcrumbs", "label": "Breadcrumbs" },
+					{ "value": "buttons", "label": "Buttons (FAB, speed dial, dropdown)" },
 					{ "value": "calendar", "label": "Calendar" },
-					{ "value": "dropdown", "label": "Dropdown" },
-					{ "value": "history", "label": "History" },
+					{ "value": "ds", "label": "Design Tokens (ds)" },
+					{ "value": "forms", "label": "Forms" },
+					{ "value": "icons", "label": "Icons" },
+					{ "value": "metrics", "label": "Metrics (progress, meter, gauge)" },
+					{ "value": "milestones", "label": "Milestones (timeline)" },
 					{ "value": "modal", "label": "Modal" },
 					{ "value": "nav", "label": "Nav" },
-					{ "value": "paginable", "label": "Paginable" },
+					{ "value": "paginable", "label": "Paginable (table & list)" },
+					{ "value": "panels", "label": "Panels (tabs, pills, accordion)" },
 					{ "value": "portal", "label": "Portal" },
 					{ "value": "skeleton", "label": "Skeleton" },
 					{ "value": "sortable", "label": "Sortable" },
 					{ "value": "stepper", "label": "Stepper" },
+					{ "value": "toast", "label": "Toast" },
 					{ "value": "utils", "label": "Utils" }
 				]
 			}
@@ -60,4 +70,3 @@
 	},
 	"required": ["libraries"]
 }
-

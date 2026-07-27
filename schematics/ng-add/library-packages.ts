@@ -33,7 +33,8 @@ export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
 	},
 	ds: { packageName: 'ng-hub-ui-ds', version: '^22.6.1' },
 	forms: { packageName: 'ng-hub-ui-forms', version: '^22.8.0' },
-	history: { packageName: 'ng-hub-ui-history', version: '^22.0.0' },
+	// NOTE: ng-hub-ui-history is intentionally absent — the package has never been
+	// published to npm. Re-add it here (and in schema.json) once it ships.
 	icons: { packageName: 'ng-hub-ui-icons', version: '^22.1.0' },
 	metrics: { packageName: 'ng-hub-ui-metrics', version: '^22.1.0' },
 	milestones: { packageName: 'ng-hub-ui-milestones', version: '^22.2.0' },
