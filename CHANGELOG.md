@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-07-28
+
+### Added
+
+- `history` returns to the catalogue and the prompt: `ng-hub-ui-history` 22.0.0 is now
+  published on npm (it had been withdrawn in 0.1.0 because offering it made
+  `npm install` fail with a 404).
+
 ## [0.1.0] - 2026-07-26
 
 ### Changed

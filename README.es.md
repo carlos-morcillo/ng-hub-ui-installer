@@ -25,6 +25,7 @@ Este paquete forma parte de [Hub UI](https://hubui.dev/), una colección de bibl
 - [**ng-hub-ui-calendar**](https://www.npmjs.com/package/ng-hub-ui-calendar)
 - [**ng-hub-ui-ds**](https://www.npmjs.com/package/ng-hub-ui-ds)
 - [**ng-hub-ui-forms**](https://www.npmjs.com/package/ng-hub-ui-forms)
+- [**ng-hub-ui-history**](https://www.npmjs.com/package/ng-hub-ui-history)
 - [**ng-hub-ui-icons**](https://www.npmjs.com/package/ng-hub-ui-icons)
 - [**ng-hub-ui-metrics**](https://www.npmjs.com/package/ng-hub-ui-metrics)
 - [**ng-hub-ui-milestones**](https://www.npmjs.com/package/ng-hub-ui-milestones)
@@ -39,7 +40,7 @@ Este paquete forma parte de [Hub UI](https://hubui.dev/), una colección de bibl
 - [**ng-hub-ui-toast**](https://www.npmjs.com/package/ng-hub-ui-toast)
 - [**ng-hub-ui-utils**](https://www.npmjs.com/package/ng-hub-ui-utils)
 
-> [`ng-hub-ui-accordion`](https://www.npmjs.com/package/ng-hub-ui-accordion) está **obsoleta** — su vista acordeón vive, mejorada, en [`ng-hub-ui-panels`](https://www.npmjs.com/package/ng-hub-ui-panels). `ng-hub-ui-history` y `ng-hub-ui-action-sheet` existen en el monorepo pero aún no están publicadas en npm, por lo que el instalador no las ofrece.
+> [`ng-hub-ui-accordion`](https://www.npmjs.com/package/ng-hub-ui-accordion) está **obsoleta** — su vista acordeón vive, mejorada, en [`ng-hub-ui-panels`](https://www.npmjs.com/package/ng-hub-ui-panels). `ng-hub-ui-action-sheet` existe en el monorepo pero aún no está publicada en npm, por lo que el instalador no la ofrece.
 
 ---
 
@@ -87,6 +88,7 @@ ng add ng-hub-ui
  ◯ Calendar
  ◯ Design Tokens (ds)
  ◯ Forms
+ ◯ History (undo/redo)
  ◯ Icons
  ◯ Metrics (progress, meter, gauge)
  ◯ Milestones (timeline)
@@ -158,6 +160,7 @@ El schematic puede instalar las siguientes bibliotecas. El identificador de la i
 | `calendar`    | [ng-hub-ui-calendar](https://www.npmjs.com/package/ng-hub-ui-calendar)       | `ng-hub-ui-utils`                     |
 | `ds`          | [ng-hub-ui-ds](https://www.npmjs.com/package/ng-hub-ui-ds)                   | —                                     |
 | `forms`       | [ng-hub-ui-forms](https://www.npmjs.com/package/ng-hub-ui-forms)             | —                                     |
+| `history`     | [ng-hub-ui-history](https://www.npmjs.com/package/ng-hub-ui-history)         | —                                     |
 | `icons`       | [ng-hub-ui-icons](https://www.npmjs.com/package/ng-hub-ui-icons)             | —                                     |
 | `metrics`     | [ng-hub-ui-metrics](https://www.npmjs.com/package/ng-hub-ui-metrics)         | —                                     |
 | `milestones`  | [ng-hub-ui-milestones](https://www.npmjs.com/package/ng-hub-ui-milestones)   | —                                     |
@@ -172,7 +175,7 @@ El schematic puede instalar las siguientes bibliotecas. El identificador de la i
 | `toast`       | [ng-hub-ui-toast](https://www.npmjs.com/package/ng-hub-ui-toast)             | —                                     |
 | `utils`       | [ng-hub-ui-utils](https://www.npmjs.com/package/ng-hub-ui-utils)             | —                                     |
 
-> `ng-hub-ui-history` y `ng-hub-ui-action-sheet` aún no se ofrecen desde el instalador: history no está publicada en npm y action-sheet es pre-release. `ng-hub-ui-accordion` está obsoleta — elige `panels` en su lugar.
+> `ng-hub-ui-action-sheet` aún no se ofrece desde el instalador (pre-release). `ng-hub-ui-accordion` está obsoleta — elige `panels` en su lugar.
 
 ## ✋ Instalación manual
 
