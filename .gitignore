@@ -6,3 +6,4 @@ schematics/**/*.d.ts.map
 schematics/**/*.metadata.json
 
 .DS_Store
+*.tgz
