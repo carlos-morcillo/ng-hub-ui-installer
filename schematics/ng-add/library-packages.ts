@@ -9,7 +9,11 @@ import type { PackageMetadata } from './models';
  * co-installs it.
  */
 export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
-	avatar: { packageName: 'ng-hub-ui-avatar', version: '^22.7.0' },
+	avatar: {
+		packageName: 'ng-hub-ui-avatar',
+		version: '^22.9.0',
+		dependencies: ['utils']
+	},
 	badges: {
 		packageName: 'ng-hub-ui-badges',
 		version: '^22.6.0',
@@ -32,11 +36,23 @@ export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
 		dependencies: ['utils']
 	},
 	ds: { packageName: 'ng-hub-ui-ds', version: '^22.6.1' },
-	forms: { packageName: 'ng-hub-ui-forms', version: '^22.8.0' },
+	forms: {
+		packageName: 'ng-hub-ui-forms',
+		version: '^22.10.0',
+		dependencies: ['utils']
+	},
 	history: { packageName: 'ng-hub-ui-history', version: '^22.0.0' },
 	icons: { packageName: 'ng-hub-ui-icons', version: '^22.1.0' },
-	metrics: { packageName: 'ng-hub-ui-metrics', version: '^22.1.0' },
-	milestones: { packageName: 'ng-hub-ui-milestones', version: '^22.2.0' },
+	metrics: {
+		packageName: 'ng-hub-ui-metrics',
+		version: '^22.2.0',
+		dependencies: ['utils']
+	},
+	milestones: {
+		packageName: 'ng-hub-ui-milestones',
+		version: '^22.3.0',
+		dependencies: ['utils']
+	},
 	modal: {
 		packageName: 'ng-hub-ui-modal',
 		version: '^22.4.1',
@@ -54,8 +70,8 @@ export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
 	},
 	panels: {
 		packageName: 'ng-hub-ui-panels',
-		version: '^22.8.2',
-		dependencies: ['ds']
+		version: '^22.10.0',
+		dependencies: ['ds', 'utils']
 	},
 	portal: {
 		packageName: 'ng-hub-ui-portal',
@@ -73,6 +89,10 @@ export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
 		version: '^22.5.0',
 		dependencies: ['utils']
 	},
-	toast: { packageName: 'ng-hub-ui-toast', version: '^22.5.1' },
+	toast: {
+		packageName: 'ng-hub-ui-toast',
+		version: '^22.6.0',
+		dependencies: ['utils']
+	},
 	utils: { packageName: 'ng-hub-ui-utils', version: '^22.7.0' }
 };
