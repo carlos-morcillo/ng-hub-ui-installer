@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-07-28
+
+### Changed
+
+- **`ng-hub-ui-utils` is now co-installed for `avatar`, `forms`, `metrics`, `milestones`,
+  `panels` and `toast`.** These libraries dropped their private copies of `resolveHubAccent`
+  and now import the canonical helper from `ng-hub-ui-utils` (declared as a new peer
+  `>=22.7.0`), so the installer adds it automatically. `panels` keeps `ng-hub-ui-ds` and
+  gains `ng-hub-ui-utils` on top.
+- Catalogue version ranges refreshed to the accompanying releases: `avatar ^22.9.0`,
+  `forms ^22.10.0`, `metrics ^22.2.0`, `milestones ^22.3.0`, `panels ^22.10.0`,
+  `toast ^22.6.0`.
+
 ## [0.1.1] - 2026-07-28
 
 ### Added
