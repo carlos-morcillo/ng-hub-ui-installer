@@ -8,10 +8,10 @@ El instalador oficial y punto de entrada de la familia de bibliotecas de compone
 
 ## Documentación y ejemplos en vivo
 
-Este paquete forma parte de [Hub UI](https://hubui.dev/), una colección de bibliotecas de componentes Angular para aplicaciones standalone.
+Este paquete forma parte de [Hub UI](https://hubui.dev/en/), una colección de bibliotecas de componentes Angular para aplicaciones standalone.
 
-- Documentación: https://hubui.dev/
-- Ejemplos en vivo: https://hubui.dev/
+- Documentación: https://hubui.dev/en/
+- Ejemplos en vivo: https://hubui.dev/en/
 
 ## 🧩 Familia de bibliotecas `ng-hub-ui`
 
