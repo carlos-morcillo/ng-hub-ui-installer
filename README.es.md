@@ -27,6 +27,7 @@ Este paquete forma parte de [Hub UI](https://hubui.dev/en/), una colección de b
 - [**ng-hub-ui-forms**](https://www.npmjs.com/package/ng-hub-ui-forms)
 - [**ng-hub-ui-history**](https://www.npmjs.com/package/ng-hub-ui-history)
 - [**ng-hub-ui-icons**](https://www.npmjs.com/package/ng-hub-ui-icons)
+- [**ng-hub-ui-loading**](https://www.npmjs.com/package/ng-hub-ui-loading)
 - [**ng-hub-ui-metrics**](https://www.npmjs.com/package/ng-hub-ui-metrics)
 - [**ng-hub-ui-milestones**](https://www.npmjs.com/package/ng-hub-ui-milestones)
 - [**ng-hub-ui-modal**](https://www.npmjs.com/package/ng-hub-ui-modal)
@@ -34,6 +35,7 @@ Este paquete forma parte de [Hub UI](https://hubui.dev/en/), una colección de b
 - [**ng-hub-ui-paginable**](https://www.npmjs.com/package/ng-hub-ui-paginable)
 - [**ng-hub-ui-panels**](https://www.npmjs.com/package/ng-hub-ui-panels)
 - [**ng-hub-ui-portal**](https://www.npmjs.com/package/ng-hub-ui-portal)
+- [**ng-hub-ui-signature**](https://www.npmjs.com/package/ng-hub-ui-signature)
 - [**ng-hub-ui-skeleton**](https://www.npmjs.com/package/ng-hub-ui-skeleton)
 - [**ng-hub-ui-sortable**](https://www.npmjs.com/package/ng-hub-ui-sortable)
 - [**ng-hub-ui-stepper**](https://www.npmjs.com/package/ng-hub-ui-stepper)
@@ -90,6 +92,7 @@ ng add ng-hub-ui
  ◯ Forms
  ◯ History (undo/redo)
  ◯ Icons
+ ◯ Loading (spinners & overlays)
  ◯ Metrics (progress, meter, gauge)
  ◯ Milestones (timeline)
  ◯ Modal
@@ -97,6 +100,7 @@ ng add ng-hub-ui
  ◯ Paginable (table & list)
  ◯ Panels (tabs, pills, accordion)
  ◯ Portal
+ ◯ Signature
  ◯ Skeleton
  ◯ Sortable
  ◯ Stepper
@@ -130,8 +134,9 @@ El schematic `ng-add` realiza exactamente los siguientes pasos:
 
 1. **Normaliza la selección.** Acepta las bibliotecas elegidas en el prompt o pasadas por flags (array o cadena separada por comas), elimina duplicados y falla con un error claro si la selección está vacía o contiene un identificador de biblioteca desconocido.
 2. **Resuelve las dependencias.** Cada biblioteca seleccionada se mapea a su paquete npm y rango de versión. Las dependencias requeridas se incorporan automáticamente:
-    - `avatar`, `badges`, `board`, `buttons`, `calendar`, `forms`, `metrics`, `milestones`, `modal`, `nav`, `paginable`, `panels`, `portal`, `stepper` y `toast` instalan además `ng-hub-ui-utils`.
+    - `avatar`, `badges`, `board`, `buttons`, `calendar`, `forms`, `loading`, `metrics`, `milestones`, `modal`, `nav`, `paginable`, `panels`, `portal`, `signature`, `stepper` y `toast` instalan además `ng-hub-ui-utils`.
     - `panels` instala además `ng-hub-ui-ds` (la capa de design tokens sobre la que se tematiza).
+    - `signature` instala además `ng-hub-ui-forms` (la envoltura de campo de formulario cuyo contrato hereda el campo de firma).
     - `sortable` instala además el paquete externo `sortablejs`.
 3. **Actualiza `package.json`.** Los paquetes resueltos se añaden a la sección `dependencies` del `package.json` raíz de tu proyecto. Las entradas existentes se respetan (el schematic nunca sobrescribe una versión que ya tengas fijada).
 4. **Instala los paquetes.** A menos que se indique `--skip-install`, programa una tarea de instalación para que tu gestor de paquetes (npm/yarn/pnpm, según detecte la CLI de Angular) descargue las nuevas dependencias.
@@ -141,10 +146,10 @@ El schematic `ng-add` realiza exactamente los siguientes pasos:
 
 ## 🎛️ Opciones
 
-| Opción           | Tipo       | Por defecto | Descripción                                                                                                  |
-| ---------------- | ---------- | ----------- | ------------------------------------------------------------------------------------------------------------ |
-| `--libraries`    | `string[]` | —           | **Obligatorio.** Identificadores de bibliotecas a instalar. Vía prompt, separados por comas o repetidos.     |
-| `--skip-install` | `boolean`  | `false`     | Actualiza solo `package.json`; omite el paso de instalación del gestor de paquetes.                          |
+| Opción           | Tipo       | Por defecto | Descripción                                                                                              |
+| ---------------- | ---------- | ----------- | -------------------------------------------------------------------------------------------------------- |
+| `--libraries`    | `string[]` | —           | **Obligatorio.** Identificadores de bibliotecas a instalar. Vía prompt, separados por comas o repetidos. |
+| `--skip-install` | `boolean`  | `false`     | Actualiza solo `package.json`; omite el paso de instalación del gestor de paquetes.                      |
 
 ## 📦 Bibliotecas instalables
 
@@ -162,6 +167,7 @@ El schematic puede instalar las siguientes bibliotecas. El identificador de la i
 | `forms`       | [ng-hub-ui-forms](https://www.npmjs.com/package/ng-hub-ui-forms)             | `ng-hub-ui-utils`                     |
 | `history`     | [ng-hub-ui-history](https://www.npmjs.com/package/ng-hub-ui-history)         | —                                     |
 | `icons`       | [ng-hub-ui-icons](https://www.npmjs.com/package/ng-hub-ui-icons)             | —                                     |
+| `loading`     | [ng-hub-ui-loading](https://www.npmjs.com/package/ng-hub-ui-loading)         | `ng-hub-ui-utils`                     |
 | `metrics`     | [ng-hub-ui-metrics](https://www.npmjs.com/package/ng-hub-ui-metrics)         | `ng-hub-ui-utils`                     |
 | `milestones`  | [ng-hub-ui-milestones](https://www.npmjs.com/package/ng-hub-ui-milestones)   | `ng-hub-ui-utils`                     |
 | `modal`       | [ng-hub-ui-modal](https://www.npmjs.com/package/ng-hub-ui-modal)             | `ng-hub-ui-utils`                     |
@@ -169,6 +175,7 @@ El schematic puede instalar las siguientes bibliotecas. El identificador de la i
 | `paginable`   | [ng-hub-ui-paginable](https://www.npmjs.com/package/ng-hub-ui-paginable)     | `ng-hub-ui-utils`                     |
 | `panels`      | [ng-hub-ui-panels](https://www.npmjs.com/package/ng-hub-ui-panels)           | `ng-hub-ui-ds`, `ng-hub-ui-utils`     |
 | `portal`      | [ng-hub-ui-portal](https://www.npmjs.com/package/ng-hub-ui-portal)           | `ng-hub-ui-utils`                     |
+| `signature`   | [ng-hub-ui-signature](https://www.npmjs.com/package/ng-hub-ui-signature)     | `ng-hub-ui-forms`, `ng-hub-ui-utils`  |
 | `skeleton`    | [ng-hub-ui-skeleton](https://www.npmjs.com/package/ng-hub-ui-skeleton)       | —                                     |
 | `sortable`    | [ng-hub-ui-sortable](https://www.npmjs.com/package/ng-hub-ui-sortable)       | `sortablejs`                          |
 | `stepper`     | [ng-hub-ui-stepper](https://www.npmjs.com/package/ng-hub-ui-stepper)         | `ng-hub-ui-utils`                     |

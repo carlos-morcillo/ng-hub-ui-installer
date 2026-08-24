@@ -43,6 +43,11 @@ export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
 	},
 	history: { packageName: 'ng-hub-ui-history', version: '^22.0.0' },
 	icons: { packageName: 'ng-hub-ui-icons', version: '^22.1.0' },
+	loading: {
+		packageName: 'ng-hub-ui-loading',
+		version: '^22.0.0',
+		dependencies: ['utils']
+	},
 	metrics: {
 		packageName: 'ng-hub-ui-metrics',
 		version: '^22.2.0',
@@ -78,6 +83,11 @@ export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
 		version: '^22.0.1',
 		dependencies: ['utils']
 	},
+	signature: {
+		packageName: 'ng-hub-ui-signature',
+		version: '^22.1.1',
+		dependencies: ['forms', 'utils']
+	},
 	skeleton: { packageName: 'ng-hub-ui-skeleton', version: '^22.2.0' },
 	sortable: {
 		packageName: 'ng-hub-ui-sortable',
@@ -94,5 +104,5 @@ export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
 		version: '^22.6.0',
 		dependencies: ['utils']
 	},
-	utils: { packageName: 'ng-hub-ui-utils', version: '^22.7.0' }
+	utils: { packageName: 'ng-hub-ui-utils', version: '^22.8.1' }
 };

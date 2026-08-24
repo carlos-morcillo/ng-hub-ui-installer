@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2026-08-24
+
+### Added
+
+- **`loading` and `signature` join the catalogue and the prompt.** `ng-hub-ui-signature` has
+  been on npm since 22.0.0 (2026-08-14) but the installer never offered it, so anyone wanting
+  the signature field had to find the package and install it by hand; `ng-hub-ui-loading`
+  22.0.0 is new to the family (spinners, overlays and a fullscreen loading service). The
+  catalogue targets `^22.1.1` and `^22.0.0` respectively.
+- Co-installs for the two new entries: `loading` pulls in `ng-hub-ui-utils`, and `signature`
+  pulls in `ng-hub-ui-forms` — the form-field shell whose contract the signature field
+  inherits — plus `ng-hub-ui-utils`.
+
+### Fixed
+
+- **The `ng-hub-ui-utils` floor was below what five libraries require.** The catalogue offered
+  `^22.7.0`, which resolves as `>=22.7.0 <23.0.0`, while `nav` peers on `>=22.8.1` and
+  `paginable`, `stepper`, `signature` and `loading` peer on `>=22.8.0`. A fresh install usually
+  landed on a recent version and hid the mismatch, so it only bit where resolution was pinned —
+  an existing lockfile, a stale cache, or a manifest already carrying `^22.7.0` — and then
+  failed with `ERESOLVE`. The floor is now `^22.8.1`, the lowest value that satisfies every
+  catalogued peer. Consumers are unaffected: the schematic writes a dependency only when the
+  key is absent, so an entry already in `package.json` is never rewritten.
+
 ## [0.1.3] - 2026-08-17
 
 ### Fixed
