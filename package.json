@@ -9,7 +9,13 @@
 		"url": "https://github.com/carlos-morcillo/ng-hub-ui.git"
 	},
 	"homepage": "https://hubui.dev/",
-	"keywords": ["angular", "ng-add", "schematics", "ui-components", "ng-hub-ui"],
+	"keywords": [
+		"angular",
+		"ng-add",
+		"schematics",
+		"ui-components",
+		"ng-hub-ui"
+	],
 	"schematics": "./schematics/collection.json",
 	"files": [
 		"schematics/collection.json",
