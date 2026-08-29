@@ -24,7 +24,7 @@ export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
 		version: '^22.3.0',
 		dependencies: ['utils']
 	},
-	breadcrumbs: { packageName: 'ng-hub-ui-breadcrumbs', version: '^22.4.0' },
+	breadcrumbs: { packageName: 'ng-hub-ui-breadcrumbs', version: '^22.5.0' },
 	buttons: {
 		packageName: 'ng-hub-ui-buttons',
 		version: '^22.9.0',
