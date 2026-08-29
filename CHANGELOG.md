@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.5] - 2026-08-29
+
+### Changed
+
+- **The `breadcrumbs` floor moves to `^22.5.0`.** The previous `^22.4.0` already resolved to the
+  new release, so nothing was broken; what the floor now states is where the features live.
+  22.5.0 is the version that collapses long trails (`maxItems`), lets a crumb point outside the
+  router (`href` / `target` / `rel` / `download`, and the `items` input) and draws the
+  design-system focus ring — so an install pinned by this catalogue lands on a version where the
+  documentation matches the package.
+
 ## [0.1.4] - 2026-08-24
 
 ### Added
