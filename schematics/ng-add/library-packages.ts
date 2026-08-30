@@ -24,6 +24,7 @@ export const LIBRARY_PACKAGES: Record<string, PackageMetadata> = {
 		version: '^22.3.0',
 		dependencies: ['utils']
 	},
+	'action-sheet': { packageName: 'ng-hub-ui-action-sheet', version: '^22.0.0' },
 	breadcrumbs: { packageName: 'ng-hub-ui-breadcrumbs', version: '^22.5.0' },
 	buttons: {
 		packageName: 'ng-hub-ui-buttons',

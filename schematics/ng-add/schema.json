@@ -10,6 +10,7 @@
 			"items": {
 				"type": "string",
 				"enum": [
+					"action-sheet",
 					"avatar",
 					"badges",
 					"board",
@@ -41,6 +42,7 @@
 				"type": "list",
 				"multiselect": true,
 				"items": [
+					{ "value": "action-sheet", "label": "Action Sheet" },
 					{ "value": "avatar", "label": "Avatar" },
 					{ "value": "badges", "label": "Badges & Chips" },
 					{ "value": "board", "label": "Board (Kanban)" },
