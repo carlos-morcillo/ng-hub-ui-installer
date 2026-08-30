@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.6] - 2026-08-30
+
+### Added
+
+- **`action-sheet` joins the catalogue and the prompt.** `ng-hub-ui-action-sheet` reaches the
+  registry with `22.0.0` — its first real release, after a scaffold that was never published —
+  so `ng add ng-hub-ui` can now offer and install it. The catalogue targets `^22.0.0`; the entry
+  needs no co-installs, since the library depends on nothing beyond Angular.
+
 ## [0.1.5] - 2026-08-29
 
 ### Changed
